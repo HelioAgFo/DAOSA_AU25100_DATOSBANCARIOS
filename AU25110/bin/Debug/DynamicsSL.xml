@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AU25110
+</name>
+</assembly>
+<members>
+<member name="M:AU25110.VBTools.MKeyOffset(System.Int16,System.Int16,Solomon.Kernel.SolomonDataObject@,System.Int16,System.Int16,System.Int16,System.Int16)">
+	<summary>
+ Define a key field for a previously opened memory array.
+ </summary>
+	<param name="MemHandle">Unique handle to a previously opened memory array.</param>
+	<param name="KeySegmentNbr">Memory array key segment whose key field is being defined. The first key segment number is always zero. Multi-segment keys must have contiguous key segment values such as 0 and 1 as opposed to 0 and 3. The maximum allowable number of key segments is five.</param>
+	<param name="bTable">SolomonDataObject containing the designated key field. This object must also have been previously passed to the MOpen call.</param>
+	<param name="KeyFldByteOffset">This argument is designed to help the system locate the first byte of the designated key field. The system will already know the memory location of the first byte of the entire user-defined datatype via the bTable argument. The byte offset tells the system how far the first byte of the designated key field is offset from the first byte of the entire user-defined datatype. If the designated key field is the first field in the user-defined datatype then a value of zero should be passed.</param>
+	<param name="KeyFldDataType">Specifies the datatype of the designated key field. The following datatype constants are declared in Applic.DH: DATA_TYPE_STRING DATA_TYPE_FLOAT DATA_TYPE_INTEGER DATA_TYPE_DATE DATA_TYPE_TIME DATA_TYPE_LOGICAL</param>
+	<param name="KeyFldDataLength">bTable.GetPropertyLength("KeyFld"). Note: It is critical to use GetPropertyLength for string properties.</param>
+	<param name="Ascending">True if the key segment should be sorted ascending. False to implement a descending sort sequence for the key segment currently being defined.</param>
+	<example> This sample shows how to call the CopyClass method.
+ <code>
+ Call MKeyOffset(MemHandle, KeySegmentNbr, bTable, KeyFldByteOffset, KeyFldDataType, KeyFldDataLength, Ascending)
+ </code>
+	</example>
+	<remarks>
+ Occasionally a program will need the ability to easily locate a particular record within a memory array
+ based on one or more key field values. The MKeyFind function can be used to accomplish this goal assuming
+ the sort order for the memory array has been previously defined. Memory arrays associated with an SAFGrid
+ control automatically have their sort order initialized by the DetailSetup function based on the key
+ field control(s) contained within the grid (e.g., notated by a �,k� in the levels property of the controls).
+ All other memory arrays must have their sort order explicitly defined via one of several different methods.
+ Each of the methods to define a key field, such as MKey, MKeyFld, MKeyHctl and MKeyOffset, vary primarily
+ in the way they acquire detailed information on a key field such as datatype, size and byte offset within
+ a user-defined datatype. The MKeyOffset method is the most flexible method of defining memory array key
+ fields but it is also the most detailed to code. It is designed to facilitate the definition of a key field
+ that does not exist in the database and therefore has no correlated data dictionary information in the
+ database. This situation can occur if one of the user-defined datatypes in a memory array is only declared
+ within VB and does not exist within the database. In such a case, the system has no way of determining the
+ byte offset from the beginning of the structure for any particular field, the field datatype nor the length
+ of the field. The MKeyOffset statement allows the developer to explicitly pass all of this detailed information
+ relating to the designated key field since it does not exist in the SQL data dictionary. Multi-segment keys
+ can be defined by successive calls to MKeyOffset with different KeySegmentNbr argument values.
+ </remarks>
+</member><member name="M:AU25110.VBTools.ScreenExit(System.String,System.String)">
+	<summary>
+ Terminate the dynamic link with the Solomon Parent, log out of the database and terminate the application.
+ </summary>
+	<param name="OpCode">
+ Operation Code. If another application should be executed after the current application terminates then
+ the name of the next application can be specified using this argument. Parameters can be sent to the
+ next application using the ParmStr argument. If the current application was originally called by
+ another application then return values can be passed back to the originating application by passing
+ the APPLICRETURNPARMS symbolic constant defined in Solomon.VBTools.vb. The actual return value(s) are
+ passed via the ParmStrargument. Normally this argument will be blank - in which case the value of
+ ParmStr is ignored, the application is terminated and no further action is taken.
+ </param>
+	<param name="ParmStr">
+ Parameter value(s) to be sent to the next application or returned to the calling application.
+ Multiple parameters can be passed by separating each individual parameter with the PRMSEP symbolic
+ constant defined in Solomon.VBTools.vb.
+</param>
+	<remarks>
+ The ScreenExit call is required in the FormClosed event handler of Form1 for all applications developed 
+ with Tools for Visual Basic.
+ </remarks>
+</member><member name="M:AU25110.VBTools.IncrStrg(System.String@,System.Int16,System.Int16)">
+	<summary>
+ Increment a string representation of a whole number value.
+ </summary>
+	<param name="StringNbr">
+ String whose current whole number is be incremented.
+ </param>
+	<param name="Length">
+ Size of StringNbr. It is not required that this value equal the full size of StringNbr.  For example, if the string can actually hold 10 bytes but currently the developer only desires to use 6 bytes values then a value 6 can be passed.
+ </param>
+	<param name="Increment">
+ Amount by which StringNbr is to be incremented.
+</param>
+	<remarks>
+ The ScreenExit call is required in the FormClosed event handler of Form1 for all applications developed 
+ with Tools for Visual Basic.
+ </remarks>
+</member><member name="M:AU25110.VBTools.ExtenderProviderProcessor.ExtenderProviderProcessAllForms">
+ HelpInit
+
+ Use reflection to iterate the specified form.  Find Help and Tooltip IExtender providers
+ and process them accordingly.
+
+
+</member><member name="T:AU25110.VBTools.ExtenderProviderProcessor">
+
+ ExtenderProviderProcessor
+
+
+</member><member name="P:AU25110.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:AU25110.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:AU25110.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
