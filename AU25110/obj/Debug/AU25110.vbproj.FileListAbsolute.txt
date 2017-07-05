@@ -9,3 +9,8 @@ C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.exe
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\DynamicsSL.xml
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.pdb
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\bin\Debug\Interop.SAF.dll
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\bin\Debug\AxInterop.SAF.dll
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\Interop.SAF.dll
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AxInterop.SAF.dll
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.vbproj.ResolveComReference.cache
