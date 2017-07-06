@@ -14,3 +14,7 @@ C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\bin\Debug\Ax
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\Interop.SAF.dll
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AxInterop.SAF.dll
 C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.vbproj.ResolveComReference.cache
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\bin\Debug\AU25110.exe.manifest
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\bin\Debug\AU25110.application
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.exe.manifest
+C:\Users\HEAF\Documents\Visual Studio 2012\Projects\AU25110\AU25110\obj\Debug\AU25110.application

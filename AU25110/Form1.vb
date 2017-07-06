@@ -12,7 +12,9 @@ Option Explicit On
 Option Strict Off
 Friend Class Form1
 	Inherits System.Windows.Forms.Form
-	
+    Dim sCustId As String
+    Dim sShipToId As String
+
 	Protected m_IsInitializing As Boolean
 	Protected ReadOnly Property IsInitializing() As Boolean
 		Get
@@ -22,7 +24,7 @@ Friend Class Form1
 
     Private Sub Form1_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 
-      
+
         Call ApplInit()
         Call Init_xSoAddress(LEVEL0, True)
 
@@ -36,6 +38,8 @@ Friend Class Form1
             .Start()
         End With
 
+        sCustId = ApplGetParmValue(PRMSECTION_VBRDT, "CustId")
+        sShipToId = ApplGetParmValue(PRMSECTION_VBRDT, "ShipToId")
 
 
     End Sub
@@ -55,12 +59,12 @@ Friend Class Form1
         Dim Custid As String
         Dim ShiptoId As String
         Dim Query As String
-        Stop
+        'Stop
         Custid = "000000"
         ShiptoId = "000030"
 
         If Level = LEVEL0 Then
-            Query = "Select * from xsoaddress where custid = " + SParm(RTrim(Custid)) + "and shiptoid =" + SParm(RTrim(ShiptoId))
+            Query = "Select * from xsoaddress where custid = " + SParm(RTrim(sCustId)) + "and shiptoid =" + SParm(RTrim(sShipToId))
             Call sql(CSR_xSoAddress, Query)
             serr1 = SFetch1(CSR_xSoAddress, bxSoAddress2)
 
