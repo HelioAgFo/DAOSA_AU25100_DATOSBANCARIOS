@@ -14,8 +14,11 @@ Friend Class Form1
 	Inherits System.Windows.Forms.Form
     Dim sCustId As String
     Dim sShipToId As String
+    Dim sBanco As String
+    Dim sMetodoPago As String
+    Dim sDigitosCuenta As String
 
-	Protected m_IsInitializing As Boolean
+    Protected m_IsInitializing As Boolean
 	Protected ReadOnly Property IsInitializing() As Boolean
 		Get
 			Return m_IsInitializing
@@ -30,8 +33,6 @@ Friend Class Form1
 
         Call ScreenInit()
 
-        Call InitBuffer()
-
         With Timer1
             .Interval = 10000
             .Enabled = True
@@ -40,7 +41,11 @@ Friend Class Form1
 
         sCustId = ApplGetParmValue(PRMSECTION_VBRDT, "CustId")
         sShipToId = ApplGetParmValue(PRMSECTION_VBRDT, "ShipToId")
+        sBanco = ApplGetParmValue(PRMSECTION_VBRDT, "Banco")
+        sMetodoPago = ApplGetParmValue(PRMSECTION_VBRDT, "MetodoBanco")
+        sDigitosCuenta = ApplGetParmValue(PRMSECTION_VBRDT, "DigitosCuenta")
 
+        Call InitBuffer(sBanco, sMetodoPago, sDigitosCuenta)
 
     End Sub
 
@@ -97,7 +102,7 @@ Friend Class Form1
 
     End Sub
 
-    Private Sub InitBuffer()
+    Private Sub InitBuffer(sBanco As String, sMetodoPago As String, sDigitosCuenta As String)
 
         With bxSoAddress
             .[Addr1] = " "
@@ -105,7 +110,7 @@ Friend Class Form1
             .[ApellidoMaterno] = " "
             .[ApellidoPaterno] = " "
             .[Attn] = " "
-            .[Banco] = " "
+            .[Banco] = sBanco
             .[City] = " "
             .[Ciudad] = " "
             .[Clave] = " "
@@ -119,7 +124,7 @@ Friend Class Form1
             .[CURP] = " "
             .[CustId] = " "
             .[Descr] = " "
-            .[DigitosCuenta] = " "
+            .[DigitosCuenta] = sDigitosCuenta
             .[DiscAcct] = " "
             .[DiscSub] = " "
             .[Domicilio] = " "
@@ -140,7 +145,7 @@ Friend Class Form1
             .[Lupd_Prog] = bpes.ScrnNbr
             .[Lupd_User] = bpes.UserId
             .[MapLocation] = " "
-            .[MetodoPago] = " "
+            .[MetodoPago] = sMetodoPago
             .[MiscAcct] = " "
             .[MiscSub] = " "
             .[Name] = " "
