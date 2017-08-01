@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="AU25110.exe" version="1.0.0.12" publicKeyToken="0ac8e0c4a87bfe79" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="AU25110" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="AU25110.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Interop.SAF" version="8.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Interop.SAFTypeLib" version="8.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Interop.VBRUN" version="8.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Dynamics.SL.Interop.Stdole" version="8.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="MSDATASRC" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Solomon.Kernel" version="8.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AU25110.exe" size="111544">
+      <assemblyIdentity name="AU25110" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>6W3acA7+hKiMpkR9pJzBm1D1Kk8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.SAF.dll" size="90112">
+      <assemblyIdentity name="AxInterop.SAF" version="6.8.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>KxUZ5+xiJ6x033HRu8FK74Cbp7I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.SAF.dll" size="217088">
+      <assemblyIdentity name="Interop.SAF" version="6.8.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>GlN9WZaqQbF7aYb6aZ81vhPGISc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AU25110.exe.config" size="1319">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7n+2Nd5izqhg03P9VgXEGGLHEOo=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-O5REQJL\HEAF" issuerKeyHash="c361a28cb034fc71e8af64a4f8594727d4b77d77" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>apA9QlDeUhKuYFea/se7WemUY2w=</DigestValue></Reference></SignedInfo><SignatureValue>PNJfBqNnLrZ5GN6EZH9oXxyTQtihkkozLCW9C2lQASsADycZnoImkdwHLO678viTCdI+PCNXs69NFDRELM3/R/PrBQ8DXocm1LftxOGIWUwbDmYVhvAJtFLUp6y9APd5WHfq9DFi4qrT5Ap83HhL1ZFIbY3nJx8Q3w0g1Y/PezI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>vSZQq0jg9SQDhxHq9vnmW/QdavCZDZEYyxwagdP7WIVkjn7PDpeU9HAbe/MN2HFDip9nLynk4h/9/fHrdcAGXhR90GTZ3T+o2soJQxdphsHGX6mR5+KumQR4QsetvMV4NoEZHaBZ0z65RyUVAg5j17RoAaToUq43dmXAws8ItlU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6c6394e959bbc7fe9a5760ae1252de50423d906a" Description="" Url=""><as:assemblyIdentity name="AU25110.exe" version="1.0.0.12" publicKeyToken="0ac8e0c4a87bfe79" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-O5REQJL\HEAF</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>OyXsfQ/oEl9Nj1YoH/GYiKpCtk8=</DigestValue></Reference></SignedInfo><SignatureValue>Cgna1IMZDmKZbheVwGVAWbMNv0S2gmDh2ZQLtTxF+Aur8imCFq9hIj9FEWPVG1uWp7zzJkRA894NzHm6iZK/tSD/TBFbQez76Z0859X55DnDInCRECo39P53WYZt6JtmiLMMVqnpCNLd/HUSe61PadYECAm8DfjU5rlwdVTdmQ0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>vSZQq0jg9SQDhxHq9vnmW/QdavCZDZEYyxwagdP7WIVkjn7PDpeU9HAbe/MN2HFDip9nLynk4h/9/fHrdcAGXhR90GTZ3T+o2soJQxdphsHGX6mR5+KumQR4QsetvMV4NoEZHaBZ0z65RyUVAg5j17RoAaToUq43dmXAws8ItlU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQQWEPLCCBrLVLGM8gpvdL4TANBgkqhkiG9w0BAQUFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtAE8ANQBSAEUAUQBKAEwAXABIAEUAQQBGMB4XDTE3MDcwNjAxMTYyNVoXDTE4MDcwNjA3MTYyNVowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQBPADUAUgBFAFEASgBMAFwASABFAEEARjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAvSZQq0jg9SQDhxHq9vnmW/QdavCZDZEYyxwagdP7WIVkjn7PDpeU9HAbe/MN2HFDip9nLynk4h/9/fHrdcAGXhR90GTZ3T+o2soJQxdphsHGX6mR5+KumQR4QsetvMV4NoEZHaBZ0z65RyUVAg5j17RoAaToUq43dmXAws8ItlUCAwEAATANBgkqhkiG9w0BAQUFAAOBgQCdDjVtm+d4yW7hfuZ7O896xlmqA4bYuX6s3pUADqzj4c0xeNHyC6WvTpp1HzIZiAbHH/rnOhqjis2hPa+Ja6c+b0wCGI9nPwNEg+HR8ErLTMW2ZqA2t8EKjE1s+1kjCqXiCRYzsbDK9TyMNlnLPBsqoxw7EG6QK0FgaOXePDwdNA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

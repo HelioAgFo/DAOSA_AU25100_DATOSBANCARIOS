@@ -1,0 +1,108 @@
+xlBanco
+xlMetodoPago
+xlDigitosCuenta
+
+sivMyApp.Controls("xlBanco").Properties("Caption")
+
+0826010	datos de facturacion
+AU25110 datos bancarios
+
+sCustId = sivMyApp.Controls("cCustID")
+    sShipToId = sivMyApp.Controls("cBillToId")
+    sSQL = "Select * From xSoAddress Where CustId = " + SParm(sCustId) + " AND ShipToId = " + SParm(sShipToId)
+    serr_xSoAddress = SqlFetch1(csr_xSoAddress, sSQL, bxSoAddress, LenB(bxSoAddress))
+    
+    'Stop
+    sBanco = bxSoAddress.Banco
+    sMetodoPago = bxSoAddress.MetodoPago
+    sDigitosCuenta = bxSoAddress.DigitosCuenta
+
+
+CODIGO DEL BOTONASO 
+**************************************************************
+Private Sub Button1_Click()
+ Dim sCustId As String
+ Dim sShipToId As String
+ Dim sSql As String
+ 
+    'Stop
+    sCustId = sivMyApp.Controls("ccustid")
+    sShipToId = sivMyApp.Controls("cBillToId")
+    
+    sSql = "Select * From xSoAddress Where CustId = " + SParm(sCustId) + " AND ShipToId = " + SParm(sShipToId)
+    serr_xSoAddress = SqlFetch1(csr_xSoAddress, sSql, bxSoAddress, LenB(bxSoAddress))
+    
+    sBanco = sivMyApp.Controls("xlBanco").Properties("Caption")
+    sMetodoPago = sivMyApp.Controls("xlMetodoPago").Properties("Caption")
+    sDigitosCuenta = sivMyApp.Controls("xlDigitosCuenta").Properties("Caption")
+    
+    'sBanco = bxSoAddress.Banco
+    'sMetodoPago = bxSoAddress.MetodoPago
+    'sDigitosCuenta = bxSoAddress.DigitosCuenta
+
+    Call ApplSetParmValue(PRMSECTION_VBRDT, "CustId", sCustId)
+    Call ApplSetParmValue(PRMSECTION_VBRDT, "ShipToId", sShipToId)
+  
+    Call ApplSetParmValue(PRMSECTION_VBRDT, "Banco", sBanco)
+    Call ApplSetParmValue(PRMSECTION_VBRDT, "MetodoPago", sMetodoPago)
+    Call ApplSetParmValue(PRMSECTION_VBRDT, "DigitosCuenta", sDigitosCuenta)
+
+  serr1 = Launch("AU\AU25110", True, True, 1)
+
+    sSql = "Select * From xSoAddress Where CustId = " + SParm(sCustId) + " AND ShipToId = " + SParm(sShipToId)
+    sivMyApp.Controls("xlMetodoPago").Properties("Caption") = ""
+    sivMyApp.Controls("xlBanco").Properties("Caption") = ""
+    sivMyApp.Controls("xlDigitosCuenta").Properties("Caption") = ""
+    
+     sSql = "Select * From xSoAddress Where CustId = " + SParm(sCustId) + " AND ShipToId = " + SParm(sShipToId)
+     serr_xSoAddress = SqlFetch1(csr_xSoAddress, sSql, bxSoAddress, LenB(bxSoAddress))
+     
+     If serr_xSoAddress = 0 Then
+        serr_xAUMetodoPago = SqlFetch1(csr_xAUMetodoPago, "Select * From xAUMetodoPago Where MetodoId = " + SParm(bxSoAddress.MetodoPago), bxAUMetodoPago, LenB(bxAUMetodoPago))
+        If serr_xAUMetodoPago = 0 Then
+            Call setprop("xlMetodoPago", "Caption", bxAUMetodoPago.Descr)
+        End If
+        
+        serr_xAUBancos = SqlFetch1(csr_xAUBancos, "Select * From xAUBancos Where BancoId = " + SParm(bxSoAddress.Banco), bxAUBancos, LenB(bxAUBancos))
+        If serr_xAUBancos = 0 Then
+            Call setprop("xlBanco", "Caption", bxAUBancos.Descr)
+        End If
+        
+        Call setprop("xlDigitosCuenta", "Caption", bxSoAddress.DigitosCuenta)
+    End If
+'    sBanco = ApplGetReturnParms()
+'    sMetodoPago = ApplGetReturnParms()
+'    sDigitosCuenta = ApplGetReturnParms()
+
+    sivMyApp.Cancel
+  
+End Sub
+
+**************************************************************
+CODIGO DE LA PANTALLA METODO DE PAGO 
+**************************************************************
+Private Sub Form1_Display()
+Dim sBanco As String
+Dim sMetodoPago As String
+Dim sDigitosCuenta As String
+
+sBanco = ApplGetParmValue(PRMSECTION_VBRDT, "Banco")
+sMetodoPago = ApplGetParmValue(PRMSECTION_VBRDT, "MetodoPago")
+sDigitosCuenta = ApplGetParmValue(PRMSECTION_VBRDT, "DigitosCuenta")
+'sDigitosCuenta = "5050"
+
+If RTrim(sBanco) <> "" Then
+sivMyApp.Controls("cBanco") = sBanco
+End If
+
+If RTrim(sMetodoPago) <> "" Then
+sivMyApp.Controls("cMetodoPago") = sMetodoPago
+End If
+'sivMyApp.Controls("cMetodoPago") = "01"
+
+If RTrim(sDigitosCuenta) <> "" Then
+sivMyApp.Controls("cDigitosCuenta") = sDigitosCuenta
+End If
+
+End Sub
+**************************************************************

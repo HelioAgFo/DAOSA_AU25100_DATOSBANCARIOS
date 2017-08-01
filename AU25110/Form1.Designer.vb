@@ -34,18 +34,18 @@ Partial Class Form1
         Me.Update1 = New Interop.SAF.SAFUpdate()
         Me.SAFHelpProvider = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cDigitosCuenta = New Interop.SAF.SAFMaskedText()
+        Me.cMetodoPago = New Interop.SAF.SAFCombo()
+        Me.cBanco = New Interop.SAF.SAFCombo()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.cBanco = New Interop.SAF.SAFCombo()
-        Me.cMetodoPago = New Interop.SAF.SAFCombo()
-        Me.cDigitosCuenta = New Interop.SAF.SAFMaskedText()
         CType(Me.Update1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.cBanco, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cMetodoPago, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cDigitosCuenta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cMetodoPago, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cBanco, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Update1
@@ -72,6 +72,30 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Bancarios"
+        '
+        'cDigitosCuenta
+        '
+        Me.cDigitosCuenta.Location = New System.Drawing.Point(197, 80)
+        Me.cDigitosCuenta.Name = "cDigitosCuenta"
+        Me.cDigitosCuenta.OcxState = CType(resources.GetObject("cDigitosCuenta.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.cDigitosCuenta.Size = New System.Drawing.Size(201, 24)
+        Me.cDigitosCuenta.TabIndex = 8
+        '
+        'cMetodoPago
+        '
+        Me.cMetodoPago.Location = New System.Drawing.Point(197, 55)
+        Me.cMetodoPago.Name = "cMetodoPago"
+        Me.cMetodoPago.OcxState = CType(resources.GetObject("cMetodoPago.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.cMetodoPago.Size = New System.Drawing.Size(260, 24)
+        Me.cMetodoPago.TabIndex = 7
+        '
+        'cBanco
+        '
+        Me.cBanco.Location = New System.Drawing.Point(197, 35)
+        Me.cBanco.Name = "cBanco"
+        Me.cBanco.OcxState = CType(resources.GetObject("cBanco.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.cBanco.Size = New System.Drawing.Size(260, 24)
+        Me.cBanco.TabIndex = 6
         '
         'Label3
         '
@@ -100,30 +124,6 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Banco:"
         '
-        'cBanco
-        '
-        Me.cBanco.Location = New System.Drawing.Point(197, 35)
-        Me.cBanco.Name = "cBanco"
-        Me.cBanco.OcxState = CType(resources.GetObject("cBanco.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.cBanco.Size = New System.Drawing.Size(260, 24)
-        Me.cBanco.TabIndex = 6
-        '
-        'cMetodoPago
-        '
-        Me.cMetodoPago.Location = New System.Drawing.Point(197, 55)
-        Me.cMetodoPago.Name = "cMetodoPago"
-        Me.cMetodoPago.OcxState = CType(resources.GetObject("cMetodoPago.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.cMetodoPago.Size = New System.Drawing.Size(260, 24)
-        Me.cMetodoPago.TabIndex = 7
-        '
-        'cDigitosCuenta
-        '
-        Me.cDigitosCuenta.Location = New System.Drawing.Point(197, 80)
-        Me.cDigitosCuenta.Name = "cDigitosCuenta"
-        Me.cDigitosCuenta.OcxState = CType(resources.GetObject("cDigitosCuenta.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.cDigitosCuenta.Size = New System.Drawing.Size(201, 24)
-        Me.cDigitosCuenta.TabIndex = 8
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -137,9 +137,9 @@ Partial Class Form1
         CType(Me.Update1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.cBanco, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cMetodoPago, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cDigitosCuenta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cMetodoPago, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cBanco, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

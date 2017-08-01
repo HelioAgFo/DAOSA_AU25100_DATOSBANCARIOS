@@ -27,11 +27,21 @@ Friend Class Form1
 
     Private Sub Form1_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 
-
         Call ApplInit()
         Call Init_xSoAddress(LEVEL0, True)
 
+        sCustId = ApplGetParmValue(PRMSECTION_VBRDT, "CustId")
+        sShipToId = ApplGetParmValue(PRMSECTION_VBRDT, "ShipToId")
+
+
+
+        'bxSoAddress.Banco = "012"
+        'bxSoAddress.MetodoPago = "04"
+        'bxSoAddress.DigitosCuenta = "5060"
+
         Call ScreenInit()
+
+        Call InitBuffer()
 
         With Timer1
             .Interval = 10000
@@ -39,13 +49,15 @@ Friend Class Form1
             .Start()
         End With
 
-        sCustId = ApplGetParmValue(PRMSECTION_VBRDT, "CustId")
-        sShipToId = ApplGetParmValue(PRMSECTION_VBRDT, "ShipToId")
-        sBanco = ApplGetParmValue(PRMSECTION_VBRDT, "Banco")
-        sMetodoPago = ApplGetParmValue(PRMSECTION_VBRDT, "MetodoBanco")
-        sDigitosCuenta = ApplGetParmValue(PRMSECTION_VBRDT, "DigitosCuenta")
+        'sBanco = ApplGetParmValue(PRMSECTION_VBRDT, "Banco")
+        'sMetodoPago = ApplGetParmValue(PRMSECTION_VBRDT, "MetodoPago")
+        'sDigitosCuenta = ApplGetParmValue(PRMSECTION_VBRDT, "DigitosCuenta")
+        'Stop
 
-        Call InitBuffer(sBanco, sMetodoPago, sDigitosCuenta)
+        'bxSoAddress.Banco = sBanco
+        'bxSoAddress.MetodoPago = sMetodoPago
+        'bxSoAddress.DigitosCuenta = sDigitosCuenta
+
 
     End Sub
 
@@ -102,7 +114,7 @@ Friend Class Form1
 
     End Sub
 
-    Private Sub InitBuffer(sBanco As String, sMetodoPago As String, sDigitosCuenta As String)
+    Private Sub InitBuffer()
 
         With bxSoAddress
             .[Addr1] = " "
@@ -110,7 +122,7 @@ Friend Class Form1
             .[ApellidoMaterno] = " "
             .[ApellidoPaterno] = " "
             .[Attn] = " "
-            .[Banco] = sBanco
+            .[Banco] = ""
             .[City] = " "
             .[Ciudad] = " "
             .[Clave] = " "
@@ -124,7 +136,7 @@ Friend Class Form1
             .[CURP] = " "
             .[CustId] = " "
             .[Descr] = " "
-            .[DigitosCuenta] = sDigitosCuenta
+            .[DigitosCuenta] = ""
             .[DiscAcct] = " "
             .[DiscSub] = " "
             .[Domicilio] = " "
@@ -145,7 +157,7 @@ Friend Class Form1
             .[Lupd_Prog] = bpes.ScrnNbr
             .[Lupd_User] = bpes.UserId
             .[MapLocation] = " "
-            .[MetodoPago] = sMetodoPago
+            .[MetodoPago] = ""
             .[MiscAcct] = " "
             .[MiscSub] = " "
             .[Name] = " "
